@@ -114,10 +114,6 @@ def mainloop():
     # define all the shapes outside
 
     box = render2d([[0, 200], [200, 200], [200, 0], [0,0]], win)
-    triangle = render2d([[0, 200], [200, 200], [200, 0]], win)
-
-    square = render2d([[300, 0], [300, 300], [200, 100]], win)
-
 
     while True:
         # escape condition
@@ -130,13 +126,6 @@ def mainloop():
 
         box.connect_with_wireframe()
         box.draw((255, 255, 255))
-
-        triangle.connect_with_wireframe()
-        triangle.draw((0, 255, 0), (0,255, 220))
-
-        square.draw((255, 255, 255))
-        square.connect_with_wireframe()
-
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos=pygame.mouse.get_pos()
