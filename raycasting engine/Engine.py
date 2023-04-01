@@ -175,7 +175,6 @@ while True:
     # draw 2D map
     draw_map()
 
-    # cast
     cast_rays()
 
     # control shit

@@ -115,6 +115,9 @@ def mainloop():
 
     box = render2d([[0, 200], [200, 200], [200, 0], [0,0]], win)
 
+    box.translate_x(100)
+
+    box.translate_y(100)
     while True:
         # escape condition
         for event in pygame.event.get():
@@ -126,6 +129,9 @@ def mainloop():
 
         box.connect_with_wireframe()
         box.draw((255, 255, 255))
+
+
+        box.rotate(math.pi / 2)
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos=pygame.mouse.get_pos()
