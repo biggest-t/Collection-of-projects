@@ -52,7 +52,7 @@ class render2d:
         return self.vertex 
 
     def set_vertex(self, new_vertex: list):
-        self.edges = new_vertex
+        self.vertex = new_vertex
     
     def get_edges(self):
         return self.edges
@@ -91,8 +91,11 @@ class render2d:
         for i in self.vertex:
             i[1] += amount
 
+    # im bad with maths lol this function barely works it rotates weird
     def rotate(self, angle):
-        pass
+        for vert in self.vertex:
+            vert[0] = vert[0] * math.cos(angle) - vert[1] * math.sin(angle)
+            vert[1] = vert[1] * math.cos(angle) + vert[0] * math.sin(angle)
 
 def mainloop():
 
@@ -131,7 +134,6 @@ def mainloop():
         box.draw((255, 255, 255))
 
 
-        box.rotate(math.pi / 2)
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos=pygame.mouse.get_pos()
@@ -152,6 +154,8 @@ def mainloop():
         if keys[pygame.K_DOWN]: box.translate_y(10)
         if keys[pygame.K_LEFT]: box.translate_x(-10)
         if keys[pygame.K_RIGHT]: box.translate_x(10)
+        if keys[pygame.K_r]:
+            print("help rotate")
                 
         pygame.display.update()
 
@@ -159,3 +163,5 @@ def mainloop():
 
 if __name__ == "__main__":
     mainloop()
+
+# good god gvim looks aweful yeah i'd rather use vs code than Gvim
