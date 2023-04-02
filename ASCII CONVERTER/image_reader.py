@@ -1,6 +1,7 @@
 import numpy
 import math
 from PIL import Image
+import pygame
 
 
 def get_image(image_path):
@@ -52,5 +53,7 @@ for i in range(image_rows):
         char_ind = math.floor(translate(gray_img_vals[j] , 0, 255, len_ascii-1, 0))
         print(ascii_chars[char_ind], end='')
     print()
+     
+
 
 # TODO make it work 

@@ -70,7 +70,7 @@ class render2d:
     
     def draw_vertex(self, color=(0)):
         for vert in self.vertex:
-            pygame.draw.circle(self.win, color , (vert[0]  , vert[1]), 10)
+            pygame.draw.circle(self.win, color , (vert[0]  , vert[1]), 5)
     
     def draw_lines(self, color=(255, 255, 255)):
         for line in self.edges:

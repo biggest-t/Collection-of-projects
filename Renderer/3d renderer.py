@@ -1,21 +1,13 @@
 import render2d
 import pygame
 import sys
-import math
+import numpy as np
+from math import *
 
-
-
-points_3d = [[1, 1, 1]
-             [1, 1, 0]
-             [1, 0, 1]
-             [0, 1, 0]]
-
-def rotate_x():
-    pass
 
 # so the idea i have is to do some trickery to make first rotate and project the points using maths and then use the 2d engine to draw the verticies
 
-
+# hell i  got the idea,  use numpy to first rotate the matrices and then  convert the matrices to my shitty listed lists 
 
 def mainloop():
 
@@ -37,7 +29,7 @@ def mainloop():
 
     # define all the shapes outside
 
-    box = render2d.render2d([[200,200,200], [0,0,0]], win)
+    box = render2d.render2d(projected_points, win)
 
     while True:
         win.fill((0))

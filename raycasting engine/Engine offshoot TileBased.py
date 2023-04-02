@@ -113,5 +113,5 @@ while True:
     pygame.display.flip()
     
     # set FPS
-    clock.tick(30)
+    clock.tick(5)
     
